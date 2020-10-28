@@ -22,3 +22,5 @@ INSERT INTO employee_payroll(name , salary , start) VALUES
 ( 'Terisa',200000.00,'2019-11-13'),
 ( 'Charlie',300000.00,'2020-05-21');
 
+#UC4
+SELECT * FROM employee_payroll;
