@@ -16,3 +16,9 @@ PRIMARY KEY (id)  									#Set ID as primary key
 );
 DESCRIBE employee_payroll;
 
+#UC3
+INSERT INTO employee_payroll(name , salary , start) VALUES
+( 'Bill',100000.00,'2018-01-03' ),
+( 'Terisa',200000.00,'2019-11-13'),
+( 'Charlie',300000.00,'2020-05-21');
+
