@@ -33,3 +33,10 @@ SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2018-01-01' as date) an
 ALTER TABLE employee_payroll ADD Gender CHAR(1) AFTER name;
 UPDATE employee_payroll SET Gender = 'F' WHERE id = 2;
 UPDATE employee_payroll SET Gender = 'M' WHERE id = 1 or id = 3;
+
+#UC7
+SELECT gender,SUM(salary),AVG(salary),MIN(salary),MAX(salary) FROM employee_payroll WHERE gender = 'F';       
+SELECT gender,SUM(salary),AVG(salary),MIN(salary),MAX(salary) FROM employee_payroll WHERE gender = 'M';       
+SELECT gender,SUM(salary),AVG(salary),MIN(salary),MAX(salary) FROM employee_payroll GROUP BY gender;          
+ 
+select gender,COUNT(*) from employee_payroll group by gender;
