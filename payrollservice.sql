@@ -40,3 +40,10 @@ SELECT gender,SUM(salary),AVG(salary),MIN(salary),MAX(salary) FROM employee_payr
 SELECT gender,SUM(salary),AVG(salary),MIN(salary),MAX(salary) FROM employee_payroll GROUP BY gender;          
  
 select gender,COUNT(*) from employee_payroll group by gender;
+
+#UC8
+ALTER TABLE employee_payroll 
+ADD COLUMN phone VARCHAR(13) AFTER name,
+ADD COLUMN address VARCHAR(250) DEFAULT 'India' AFTER phone,
+ADD COLUMN department VARCHAR(150) NOT NULL AFTER address;
+SELECT * FROM employee_payroll;
