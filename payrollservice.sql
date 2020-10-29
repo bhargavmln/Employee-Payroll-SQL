@@ -55,4 +55,12 @@ ADD COLUMN deductions DOUBLE NOT NULL AFTER basic_pay,
 ADD COLUMN taxable_pay DOUBLE NOT NULL AFTER deductions,
 ADD COLUMN tax DOUBLE NOT NULL AFTER taxable_pay,
 ADD COLUMN net_pay DOUBLE NOT NULL AFTER tax;
+
+ALTER TABLE employee_payroll DROP COLUMN salary;
+
 SELECT * FROM employee_payroll;
+
+#UC10
+UPDATE employee_payroll SET department = 'sales' WHERE name = 'Terisa';
+INSERT INTO employee_payroll (name,phone,address,department,gender,basic_pay,deductions,taxable_pay,tax,net_pay,start) VALUES
+('Terisa','1231231231','Goa','marketing','F',300000.00,100000,2000000,500000,1500000,'2020-05-21');
