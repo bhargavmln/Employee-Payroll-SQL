@@ -132,12 +132,23 @@ SELECT * FROM employee_dep;
 SELECT gender,SUM(net_pay),AVG(net_pay),MIN(net_pay),MAX(net_pay) 
 FROM employee_details JOIN payroll 
 ON employee_details.payroll_id = payroll.payroll_id
-WHERE gender = 'M' ;  
-
-SELECT gender,SUM(net_pay),AVG(net_pay),MIN(net_pay),MAX(net_pay) 
-FROM employee_details JOIN payroll 
-ON employee_details.payroll_id = payroll.payroll_id
-WHERE gender = 'F' ; 
+GROUP BY gender ; 
 
 select gender,COUNT(*) from employee_details group by gender;
+
+#UC12
+SELECT * FROM payroll;
+SELECT * FROM employee_details;
+SELECT * FROM department;
+SELECT * FROM employee_dep;
+
+SELECT name,basic_pay,deductions,taxable_pay,tax,net_pay 
+FROM employee_details JOIN payroll 
+ON employee_details.payroll_id = payroll.payroll_id
+HAVING name = 'Bill';              
+
+SELECT start_date,name,basic_pay,deductions,taxable_pay,tax,net_pay 
+FROM employee_details JOIN payroll 
+ON employee_details.payroll_id = payroll.payroll_id
+HAVING start_date BETWEEN CAST('2018-01-01' as date) and date(now());
 
